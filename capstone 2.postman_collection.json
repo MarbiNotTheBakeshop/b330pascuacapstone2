@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "3a958604-6770-4886-8667-d6e1b5355c90",
+		"name": "capstone 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30192040"
+	},
+	"item": [
+		{
+			"name": "GET: \"/checkEmail\"",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"marbs@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/users/checkEmail"
+			},
+			"response": []
+		},
+		{
+			"name": "POST: \"/register\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"marbs@mail.com\",\r\n    \"password\" : \"1234567\",\r\n    \"isAdmin\" : {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "POST: \"/login\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWVjMTg4Njc1MzQwM2ViMDE3NjJmMCIsImVtYWlsIjoiQWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA0OTA1MDA3fQ.6miTJKpCy4r44-2MLbYKICNQYQgKYyh0gw5o4yrTkoI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"marbs@mail.com\",\r\n    \"password\" : \"1234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "POST: \"/addProduct\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWZhMzUwMzM3N2UxMjI3NzViMDg3MiIsImVtYWlsIjoibWFyYmlub3R0aGViYWtlc2hvcEBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwNDk2MDk1NH0.zuFit8ceeBlt53itTuvogyi1ooevdLhlrZSA5JCvVgM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Americano\",\r\n  \"price\": 120,\r\n  \"description\": \"Americano Coffee\",\r\n  \"isActive\": {},\r\n  \"createdOn\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/products/addProduct"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: \"/all\"",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7001/products/all"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: \"/allActive\"",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7001/products/allActive"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: \"/:productId\"",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7001/products/659ed6a583a5232fdcf09769"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: \"/:productId\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWYzMGQ5ZjkxYjY2MjJkNTQ3MzBiNiIsImVtYWlsIjoiQWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MzE2ODd9.BzPoBh6CmtZ8pWRLalDmMpPJ9Il-5a6-CpasGaT0EGw"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vanillaa\",\r\n    \"description\": \"Vanillaa Latte\",\r\n    \"price\": 199\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/products/659ed5b2abc4f0fffba675d0"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: \"/:productId/archive\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWYzMGQ5ZjkxYjY2MjJkNTQ3MzBiNiIsImVtYWlsIjoiQWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MzE2ODd9.BzPoBh6CmtZ8pWRLalDmMpPJ9Il-5a6-CpasGaT0EGw"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vanillaa\",\r\n    \"description\": \"Vanillaa Latte\",\r\n    \"price\": 199\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/products/659ed5b2abc4f0fffba675d0/archive"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT: \"/:productId/activate\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWYzMGQ5ZjkxYjY2MjJkNTQ3MzBiNiIsImVtYWlsIjoiQWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MzE2ODd9.BzPoBh6CmtZ8pWRLalDmMpPJ9Il-5a6-CpasGaT0EGw"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vanillaa\",\r\n    \"description\": \"Vanillaa Latte\",\r\n    \"price\": 199\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/products/659ed5b2abc4f0fffba675d0/activate"
+			},
+			"response": []
+		},
+		{
+			"name": "POST: \"/addToCart\"",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"659fbd0fc0a4f27bed03e29c\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": \"659fa3d03377e122775b0877\",\r\n            \"qty\": 3,\r\n            \"price\": 120 \r\n        }\r\n    ],\r\n    \"totalAmount\": {},  \r\n    \"timestamp\": {}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:7001/carts/addToCart"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: \"/orders/:userId\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7001/carts/orders/659fbd0fc0a4f27bed03e29c"
+			},
+			"response": []
+		},
+		{
+			"name": "GET: \"/details/:userId\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:7001/users/659fbd0fc0a4f27bed03e29c"
+			},
+			"response": []
+		}
+	]
+}
